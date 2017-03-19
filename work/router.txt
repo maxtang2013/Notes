@@ -1,0 +1,56 @@
+
+
+tempassgin.php 
+	=====> Manages what package (skin?) to use for current domain(dev2.tailopez.com, dev2.tailopez.net, etc) and user (male? or famale?).
+
+1). design.inc.php:211
+2). router.php
+3). $action."Controller.php"
+
+
+GET domain CODE
+SELECT * FROM multi_domain WHERE `name`='dev2.tailopez.com'
+4
+
+a) FIND TID FOR forgot.php
+Take forgot.php for an example.
+SELECT * FROM `tmpl_html` WHERE `scriptname`='forgot.php'
+
+42
+
+b). FIND ALL PLUGINS FOR THIS PAGE.
+PluginLoad.php
+select * from tmpl_plugins where `tid`='%d' and `section`='%s' and `domain`='%d' order by `sort` asc
+
+select * from tmpl_plugins where `tid`='42' and `domain`='4' order by `sort` asc
+
+
+2274 42 53 header header 1 0 yes yes 4
+2275 42 54 footer footer 1 0 yes yes 4
+
+
+====[PluginLoad.php] ====
+select version_path from tmpl_plugin_name where id=53
+v2
+include_once(ROOT_PATH."controller/plugins/".$expath.$plugin."/".$plugin.".plugin.php");
+            
+
+
+select version_path from tmpl_plugin_name where id=54
+
+=============================================================================
+get header template from database ( TABLE tmpl_plugins ) as a string $header
+get footer template from database                        as a string $header
+
+display the html with Smarty(A third party template engine).
+
+
+
+========Admin pages for router and templating==================
+https://dev2.tailopez.com/admin/tmplPackages.php   
+https://dev2.tailopez.com/admin/tmplconfig_domains.php 
+https://dev2.tailopez.com/admin/tmpl_plugin_domains.php
+
+
+
+

@@ -1,0 +1,77 @@
+<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\"><head>
+    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">
+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge,chrome=1\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\">
+    <title>{$title}</title>
+    <link href=\"/controller/themes/tai-bnr-opt1/css/bootstrap.css\" rel=\"stylesheet\" type=\"text/css\" />
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"/controller/themes/tai-bnr-opt1/css/animate.css\" media=\"screen\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"/controller/themes/tai-bnr-opt1/css/font-awesome.css\" media=\"screen\">
+    <link href=\"/controller/themes/tai-bnr-opt1/css/main.css?v={$css_random}\" rel=\"stylesheet\" type=\"text/css\" />
+    <link href=\"/controller/themes/tai-bnr-opt1/css/menu.css?v={$css_random}\" rel=\"stylesheet\" type=\"text/css\" />
+    <!--[if lt IE 9]>
+    <script type=\"text/javascript\" src=\"/controller/themes/tai-bnr-opt1/js/html5shiv.js\"></script>
+    <![endif]-->
+<!--All JavaScript Here-->
+    <script type=\"text/javascript\" src=\"/controller/themes/magzine/js/jquery2.1.0.js\"></script>
+<script type=\"text/javascript\" src=\"/controller/themes/magzine/js/join_js.js\"></script>
+    <script type=\"text/javascript\" src=\"/controller/themes/magzine/js/bootstrap.js\"></script>
+    <script type=\"text/javascript\" src=\"/controller/themes/magzine/js/bootstrapValidator.js\"></script>
+    <script type=\"text/javascript\" src=\"/controller/themes/magzine/js/wow.min.js\"></script>
+    <script type=\"text/javascript\" src=\"/controller/themes/magzine/js/smoothscroll.js\"></script>
+    <script type=\"text/javascript\" src=\"/controller/themes/magzine/js/jquery.smooth-scroll.js\"></script>
+    <script type=\"text/javascript\" src=\"/controller/themes/magzine/js/jquery.masonry.min.js\"></script>
+
+    <!--[if lte IE 9]>
+    <script type=\"text/javascript\" src=\"/controller/themes/magzine/js/respond.min.js\"></script>
+    <![endif]-->
+{$seo.google_analytics_code}
+</head>
+
+<body data-spy=\"scroll\" data-target=\"#myScrollspy\">
+{$header}
+
+
+<div id=\"main-content\" role=\"main\">
+    {$joinfrom}
+
+
+
+    <div id=\"about\">
+        <div class=\"container\">
+            <div class=\"row\">
+
+<div class=\"col-sm-12\">
+            <div id=\"leftside\">
+            <div class=\"subscription\">
+            	{$show_text}	
+                
+            </div>
+            
+               </div>
+            
+            
+            </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+    {$footer}
+
+    
+
+
+</div>
+
+{literal}
+<script type=\"text/javascript\">
+if(typeof(site_url)==\"undefined\")
+{
+   var site_url = \"{/literal}{$site_url}{literal}\";
+}
+</script>
+{/literal}
+<script type=\"text/javascript\" src=\"/inc/js/join_pop_js.js\"></script>
+{$chat_code}
+</body></html>

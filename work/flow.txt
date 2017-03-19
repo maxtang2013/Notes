@@ -1,0 +1,126 @@
+1)
+dev2.tailopez.com/Funnel.php?lp=FS-1482
+
+https://dev2.tailopez.com/Funnel.php?id=872
+2)
+"select * from `flow_parentflow` where `name`='872'"
+return a empty set
+
+$this->step will also be empty.
+
+$this->visibilityTest() pass
+
+3)
+
+create FlowTest() instance $flowLogic
+
+chooseSubFlow()
+	$flowLogic->createFlow()
+		select * from flow_subflow where `pid`='872'
+		return two items both with percent 100
+
+		$flow = [
+			"subflowid" => 8579,
+			"tempid" => 629,
+			"courseid" => 0,
+			"upsellclass" => 0,
+			"priceid" => 0, 
+			"videoid" => 58,
+			"joinflow" => 161,
+			"headline" => 18,
+			"salefailure" => 0,
+			"checkoutfailure" => 0,
+		]
+
+4) select * from flow_productsincheckout where `subflowid`='8579'
+id subflowid bundleid priceid
+     8579       179     235
+
+5) select * from flow_subprice where `pid`='0', $flow['priceid']
+id   pid  name                 percent      checkout upsellone  upselltwo   bumpprice
+243 235   PriceFlowSubID-3903   100           67.00    0            0          30
+
+recurring config : a:1:{s:8:"checkout";a:6:{s:3:"rec";s:1:"1";s:3:"bil";d:69.9899999999999948840923025272786617279052734375;s:3:"fir";s:2:"14";s:3:"sec";s:2:"30";s:3:"sil";d:69.9899999999999948840923025272786617279052734375;s:3:"con";s:3:"146";}}
+
+
+6) select * from flow_subvideo where `pid`='58', $flow['videoid']
+
+59
+58
+100
+VFS-599
+a:9:{s:5:"media";a:5:{i:0;a:1:{i:0;s:3:"281";}i:1;...
+
+
+7) select * from flow_subthumbails where `pid`='0'
+
+8) select * from flow_subheadline where `pid`='%d'
+
+id pid percent name       config
+24 18  100   HFS-414 a:2:{s:8:"headline";a:4:{i:0;a:1:{i:0;s:87:"67 Ste..
+
+9) $temp = db_arr(sprintf("select * from payment_flow where id='629'",$flow['tempid'] ));
+id ： 629
+name ： New 67 Steps Copy For Upsell Pages | Duke's Upsell...
+productID ： 0
+tempID ： 863
+status ： active 
+previousID : 1280
+rectempid : 0
+footer_show : 1 
+footer_checkout : 1
+footer_receipt : 1
+sales_exitflag : 1
+checkou_exitflag : 0
+decline_text : Oops looks like your bank was having trouble proce...
+
+
+
+$inits = db_arr(sprintf("select * from flow_landpage where `flowid`='%d' ",$flow['tempid']));
+select * from flow_landpage where `flowid`='%d'
+
+id : 1224
+templateID : 703
+flowid : 629
+step : 1
+footer_show : 1
+exitflag : 1
+unlocked : 0
+
+
+10) flow_records TABLE
+
+possible seeds: (all with tempid 681)
+580d7f4e49dca 582573ea32828
+58103cbc5d541
+
+11)select * from payment_flow where id='%d', $tempid
+select * from flow_landpage where `flowid`='%d' 
+
+
+12) 
+TestFlow:: addjs()
+	select * from flow_subflow where id='8579'
+	exittext=0
+	exiturl=0
+
+13)
+
+$initStep : 1280
+
+
+14) 
+
+
+
+
+
+TABLES:
+"flow_paybutton"
+	information on how should a paybutton be, contains information like "foreground images", "background images", "redirect url", "button width", "where to place the button", etc.
+
+	In the html template file there are tags named '__BuyNowButton__' and '__Button__',  which will be replaced with generated html code that implement the button.
+
+
+
+

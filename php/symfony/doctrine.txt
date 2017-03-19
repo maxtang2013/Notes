@@ -1,0 +1,3 @@
+#to generate a entity class AppBundle::Project
+php bin/console doctrine:generate:entity --entity=AppBundle/Entity/Project
+

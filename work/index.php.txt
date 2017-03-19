@@ -1,0 +1,9 @@
+
+
+top-nav-buttons:  
+controller/plugins/v2/header
+
+Social links, (face book PAGE LIKES, tweeter FOLLOWERS, etc.):
+controller/plugins/v2/follows
+
+

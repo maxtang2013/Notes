@@ -1,0 +1,13 @@
+
+INSTALL locations
+
+MYSQL: /usr/local/mysql
+
+Published Web Pages: /Library/WebServer/Documents/
+
+localhost/info.php --> /Library/WebServer/Documents/info.php
+localhost/phpmyadmin --> /Library/WebServer/Documents/phpmyadmin
+
+
+
+

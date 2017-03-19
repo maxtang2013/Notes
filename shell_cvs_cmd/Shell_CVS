@@ -1,0 +1,10 @@
+git branch newbranch
+git checkout newbranch
+
+
+
+git rebase master
+
+git co master
+git merge newbranch
+

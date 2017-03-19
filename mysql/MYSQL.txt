@@ -1,0 +1,27 @@
+
+# to Check the CharacterSet of a database
+SELECT DEFAULT_CHARACTER_SET_NAME, DEFAULT_COLLATION_NAME
+FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = 'db_name';
+
+#
+
+/etc/my.cnf	Global options
+/etc/mysql/my.cnf	Global options
+SYSCONFDIR/my.cnf	Global options
+$MYSQL_HOME/my.cnf	Server-specific options (server only)
+defaults-extra-file	The file specified with --defaults-extra-file, if any
+~/.my.cnf	User-specific options
+~/.mylogin.cnf	User-specific login path options (clients only)
+
+
+# Create a user.
+1.mysql>CREATE USER 'user1'@'localhost' IDENTIFIED BY 'pass1';
+
+2.mysql>GRANT SELECT,INSERT,UPDATE,DELETE ON *.* TO 'user1'@'localhost';
+
+OR
+
+mysql>GRANT ALL ON *.* TO 'user1'@'localhost';
+
+
+SET PASSWORD FOR freelance@localhost = PASSWORD('new_password');
