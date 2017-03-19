@@ -1,0 +1,10 @@
+1. Drag a table view controller object to the empty area of the storyboard, to create a new scene.
+
+2. Create a TableViewCell subclass, say, MealTableViewCell.
+
+3. Find the TableViewCell in the outline window, set class of the TableViewCell to MealTableViewCell.
+
+4. Drag element view control (buttons, image views, labels, etc.) into the TableViewCell
+
+5. Connect elemental view control to MealTableViewCell class.
+

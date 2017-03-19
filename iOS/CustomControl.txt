@@ -1,0 +1,10 @@
+1). Create a control class (say, RatingControl), subclassing a existing control like StackView.
+	a). Implement a function to create subviews (buttons, labels, textfields, etc.) and add 
+	these subviews to the container view (using methods like StackView::addArrangedSubview). 
+	Then call this function from ::init(), and properties' setters as well, if the property affects the look of the control.
+
+2). In stroyboard, drag a parent view control (say, StackView) into the scene.
+3). With the new view control selected, in the Identity Inspector, 	change the class to our new type, RatingControl.
+
+4). Use @IBDesignable to let Interface Builder know our new control type.
+

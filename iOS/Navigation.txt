@@ -1,0 +1,21 @@
+1. Embed a existing scene with a Navigation Controller (Editor => Embed In => Navigation Controller)
+
+2. Drag a "Bar Button Item" into the (old) ViewController's top (Navigation) panel.
+
+3. Crtl-drag the "Bar Button Item" to another Scene to create a Segue.
+	Modally Present
+
+4. unwind Segue (Segue created by ctrl-drag a "Bar Button Item" to the "Exit" )
+
+	// IN FROMViewController.swift.
+	// This method is called every time a Segue is triggered.
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+	}
+
+	// In TOViewController.swift
+	// CHOOSE this function while creating the unwind Segue.
+	@IBAction func unwindToMealList(sender: UIStoryboardSegue) {
+	}
+
+
+5. UIViewController::dismiss(animated:,completion:)
