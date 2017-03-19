@@ -1,0 +1,46 @@
+1. What can we do in 
+
+
+A) ===================================
+StackView cann't change size by dragging, add constraints instead.
+View object inside a StackView should also be changed using constraints.
+
+
+B) ===================================
+Ctrl + dragging to connect UIViews to code.
+
+
+C) ===================================
+text field delegate
+
+
+
+
+
+ 
+                 viewDidAppear()
+      Appearing      ====>              Appeared
+         /                                /
+        /                                / 
+       /                               |/_
+ viewWillAppear()                  viewWillDisAppear()
+     /                                         /
+    /                                         /
+Disppeared  <- viewDidDisAppear() <--  disappearing
+
+
+D). Create custom view control.
+	1). Choose File > New > File (or press Command-N).
+	2). At the top of the dialog that appears, select iOS.
+	3).	Select Cocoa Touch Class, and click Next.
+	4).	In the Class field, type RatingControl.
+		In the “Subclass of” field, select UIStackView.
+		Make sure the Language option is set to Swift.
+
+
+	Recall that the Identity inspector lets you edit properties of an object in your storyboard related to that object’s identity, such as what class the object belongs to.
+
+	@IBDesignable
+
+
+
